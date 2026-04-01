@@ -115,7 +115,7 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 - Attached Target Group
 
 📸 Screenshot:
-![Load Balancer](./screenshots/load-balancer.png)
+![Load Balancer](./screenshots/alb.png)
 
 ---
 
