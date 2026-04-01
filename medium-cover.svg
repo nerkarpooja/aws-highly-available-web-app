@@ -1,0 +1,170 @@
+<svg width="1400" height="780" viewBox="0 0 1400 780" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <style>
+    .bg       { fill: #0a0a0f }
+    .grid-l   { stroke: #1e1e2e; stroke-width: 0.8 }
+    .box-dark { fill: #13131f; stroke: #1e1e2e; stroke-width: 1 }
+    .box-g    { fill: #0a1f14; stroke: #00f5a0; stroke-width: 1.5 }
+    .box-b    { fill: #0a1820; stroke: #00d9f5; stroke-width: 1.5 }
+    .box-p    { fill: #1a0a1f; stroke: #f500f5; stroke-width: 1.5 }
+    .box-o    { fill: #1f1200; stroke: #f5a000; stroke-width: 1.5 }
+    .box-r    { fill: #1f0a00; stroke: #f55000; stroke-width: 1.2 }
+    .lbl      { font-family: monospace; font-size: 20px; fill: #6b6b8a; letter-spacing: 4px }
+    .t-main   { font-family: sans-serif; font-size: 80px; font-weight: 800; fill: #e8e8f0 }
+    .t-sub    { font-family: sans-serif; font-size: 38px; font-weight: 800 }
+    .t-muted  { font-family: sans-serif; font-size: 30px; fill: #6b6b8a }
+    .mono-v   { font-family: monospace; font-size: 18px }
+    .mono-s   { font-family: monospace; font-size: 16px; fill: #6b6b8a }
+    .badge-t  { font-family: monospace; font-size: 16px; font-weight: 700; letter-spacing: 2px }
+    .num      { font-family: sans-serif; font-size: 44px; font-weight: 800 }
+    .conn     { fill: none; stroke-width: 2 }
+    .dash     { fill: none; stroke-width: 1.2; stroke-dasharray: 5,4 }
+  </style>
+</defs>
+
+<!-- BG -->
+<rect width="1400" height="780" class="bg"/>
+
+<!-- Grid lines -->
+<g opacity="0.35">
+  <line x1="0" y1="100" x2="1400" y2="100" class="grid-l"/>
+  <line x1="0" y1="200" x2="1400" y2="200" class="grid-l"/>
+  <line x1="0" y1="300" x2="1400" y2="300" class="grid-l"/>
+  <line x1="0" y1="400" x2="1400" y2="400" class="grid-l"/>
+  <line x1="0" y1="500" x2="1400" y2="500" class="grid-l"/>
+  <line x1="0" y1="600" x2="1400" y2="600" class="grid-l"/>
+  <line x1="0" y1="700" x2="1400" y2="700" class="grid-l"/>
+  <line x1="140" y1="0" x2="140" y2="780" class="grid-l"/>
+  <line x1="280" y1="0" x2="280" y2="780" class="grid-l"/>
+  <line x1="420" y1="0" x2="420" y2="780" class="grid-l"/>
+  <line x1="560" y1="0" x2="560" y2="780" class="grid-l"/>
+  <line x1="700" y1="0" x2="700" y2="780" class="grid-l"/>
+  <line x1="840" y1="0" x2="840" y2="780" class="grid-l"/>
+  <line x1="980" y1="0" x2="980" y2="780" class="grid-l"/>
+  <line x1="1120" y1="0" x2="1120" y2="780" class="grid-l"/>
+  <line x1="1260" y1="0" x2="1260" y2="780" class="grid-l"/>
+</g>
+
+<!-- Eyebrow line only (no text) -->
+<line x1="80" y1="84" x2="440" y2="84" stroke="#00f5a0" stroke-width="1.5" opacity="0.7"/>
+
+<!-- AWS badge top right -->
+<rect x="1200" y="38" width="160" height="40" rx="6" class="box-g"/>
+<text x="1280" y="65" class="badge-t" fill="#00f5a0" text-anchor="middle">AWS Cloud</text>
+
+<!-- TITLE -->
+<text x="80" y="180" class="t-main">Highly Available</text>
+<text x="80" y="260">
+  <tspan class="t-sub" fill="#00f5a0">Auto Scaling</tspan>
+  <tspan class="t-sub" fill="#e8e8f0"> + </tspan>
+  <tspan class="t-sub" fill="#00d9f5">Load Balancer</tspan>
+</text>
+<text x="80" y="310" class="t-muted">Zero Single Point of Failure Architecture</text>
+
+<!-- BADGES -->
+<rect x="80"  y="348" width="140" height="36" rx="5" class="box-g"/>
+<text x="150" y="371" class="badge-t" fill="#00f5a0" text-anchor="middle">Multi-AZ</text>
+
+<rect x="232" y="348" width="160" height="36" rx="5" class="box-b"/>
+<text x="312" y="371" class="badge-t" fill="#00d9f5" text-anchor="middle">Auto Scaling</text>
+
+<rect x="404" y="348" width="184" height="36" rx="5" class="box-p"/>
+<text x="496" y="371" class="badge-t" fill="#f500f5" text-anchor="middle">Load Balanced</text>
+
+<rect x="600" y="348" width="148" height="36" rx="5" class="box-o"/>
+<text x="674" y="371" class="badge-t" fill="#f5a000" text-anchor="middle">Zero SPOF</text>
+
+<!-- STATS -->
+<rect x="80"  y="430" width="120" height="90" rx="6" class="box-dark"/>
+<text x="140" y="494" class="num" fill="#00f5a0" text-anchor="middle">2</text>
+<text x="140" y="514" class="mono-s" text-anchor="middle">min instances</text>
+
+<rect x="216" y="430" width="120" height="90" rx="6" class="box-dark"/>
+<text x="276" y="494" class="num" fill="#00d9f5" text-anchor="middle">5</text>
+<text x="276" y="514" class="mono-s" text-anchor="middle">max instances</text>
+
+<rect x="352" y="430" width="120" height="90" rx="6" class="box-dark"/>
+<text x="412" y="494" class="num" fill="#f500f5" text-anchor="middle">2</text>
+<text x="412" y="514" class="mono-s" text-anchor="middle">avail. zones</text>
+
+<rect x="488" y="430" width="120" height="90" rx="6" class="box-dark"/>
+<text x="548" y="488" class="num" fill="#f5a000" text-anchor="middle" font-size="32px">70%</text>
+<text x="548" y="510" class="mono-s" text-anchor="middle">CPU threshold</text>
+
+<!-- TECH PILLS -->
+<text x="80" y="560" class="lbl" font-size="16px">TECH STACK</text>
+<rect x="80"  y="574" width="72"  height="30" rx="4" class="box-g"/>
+<text x="116" y="594" class="badge-t" fill="#00f5a0" text-anchor="middle">EC2</text>
+
+<rect x="162" y="574" width="72"  height="30" rx="4" class="box-b"/>
+<text x="198" y="594" class="badge-t" fill="#00d9f5" text-anchor="middle">ALB</text>
+
+<rect x="244" y="574" width="72"  height="30" rx="4" class="box-p"/>
+<text x="280" y="594" class="badge-t" fill="#f500f5" text-anchor="middle">ASG</text>
+
+<rect x="326" y="574" width="72"  height="30" rx="4" class="box-o"/>
+<text x="362" y="594" class="badge-t" fill="#f5a000" text-anchor="middle">VPC</text>
+
+<rect x="408" y="574" width="124" height="30" rx="4" class="box-r"/>
+<text x="470" y="594" class="badge-t" fill="#f55000" text-anchor="middle">CloudWatch</text>
+
+<rect x="542" y="574" width="96"  height="30" rx="4" class="box-g"/>
+<text x="590" y="594" class="badge-t" fill="#00f5a0" text-anchor="middle">Nginx</text>
+
+<!-- Live dot -->
+<circle cx="762" cy="586" r="7" fill="#00f5a0" opacity="0.9"/>
+<circle cx="762" cy="586" r="14" fill="#00f5a0" opacity="0.15"/>
+<text x="782" y="592" class="mono-s" fill="#00f5a0" font-size="18px">LIVE</text>
+
+<!-- ── ARCHITECTURE DIAGRAM ── -->
+<!-- AZ dashed containers -->
+<rect x="860" y="456" width="200" height="260" rx="6" class="dash" stroke="#00f5a0" opacity="0.6"/>
+<text x="960" y="448" class="mono-s" text-anchor="middle" fill="#00f5a0" font-size="18px">AZ-a</text>
+
+<rect x="1100" y="456" width="200" height="260" rx="6" class="dash" stroke="#00d9f5" opacity="0.6"/>
+<text x="1200" y="448" class="mono-s" text-anchor="middle" fill="#00d9f5" font-size="18px">AZ-b</text>
+
+<!-- Internet -->
+<rect x="930" y="100" width="220" height="60" rx="6" class="box-o"/>
+<text x="1040" y="136" class="mono-v" fill="#f5a000" text-anchor="middle">Internet / Users</text>
+
+<!-- Arrow to ALB -->
+<line x1="1040" y1="160" x2="1040" y2="200" class="conn" stroke="#f5a000" marker-end="url(#arrow)"/>
+
+<!-- ALB -->
+<rect x="880" y="200" width="320" height="60" rx="6" class="box-b"/>
+<text x="1040" y="236" class="mono-v" fill="#00d9f5" text-anchor="middle">Application Load Balancer</text>
+
+<!-- Arrow to ASG -->
+<line x1="1040" y1="260" x2="1040" y2="310" class="conn" stroke="#00d9f5" marker-end="url(#arrow)"/>
+
+<!-- ASG -->
+<rect x="880" y="310" width="320" height="60" rx="6" class="box-p"/>
+<text x="1040" y="346" class="mono-v" fill="#f500f5" text-anchor="middle">Auto Scaling Group</text>
+
+<!-- Arrows to AZ boxes -->
+<line x1="970"  y1="370" x2="960"  y2="466" class="conn" stroke="#f500f5" marker-end="url(#arrow)"/>
+<line x1="1110" y1="370" x2="1200" y2="466" class="conn" stroke="#f500f5" marker-end="url(#arrow)"/>
+
+<!-- EC2 in AZ-a -->
+<rect x="880" y="476" width="160" height="52" rx="5" class="box-g"/>
+<text x="960" y="507" class="mono-v" fill="#00f5a0" text-anchor="middle">EC2 Instance</text>
+<rect x="880" y="546" width="160" height="52" rx="5" fill="#0a1f14" stroke="#00f5a0" stroke-width="0.8" opacity="0.55"/>
+<text x="960" y="577" class="mono-v" fill="#00f5a0" text-anchor="middle" opacity="0.55">EC2 Instance</text>
+<rect x="880" y="616" width="160" height="40" rx="5" fill="#0a1f14" stroke="#00f5a0" stroke-width="0.5" opacity="0.28"/>
+<text x="960" y="641" class="mono-v" fill="#00f5a0" text-anchor="middle" opacity="0.28">EC2 Instance</text>
+
+<!-- EC2 in AZ-b -->
+<rect x="1120" y="476" width="160" height="52" rx="5" class="box-b"/>
+<text x="1200" y="507" class="mono-v" fill="#00d9f5" text-anchor="middle">EC2 Instance</text>
+<rect x="1120" y="546" width="160" height="52" rx="5" fill="#0a1820" stroke="#00d9f5" stroke-width="0.8" opacity="0.55"/>
+<text x="1200" y="577" class="mono-v" fill="#00d9f5" text-anchor="middle" opacity="0.55">EC2 Instance</text>
+
+<!-- CloudWatch -->
+<rect x="880" y="730" width="440" height="40" rx="5" class="box-r"/>
+<text x="1100" y="755" class="mono-v" fill="#f55000" text-anchor="middle">CloudWatch — CPU Alarms</text>
+<line x1="1040" y1="716" x2="1040" y2="730" class="conn" stroke="#f55000" stroke-dasharray="3,3" marker-end="url(#arrow)"/>
+</svg>
