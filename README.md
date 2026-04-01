@@ -147,7 +147,7 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 - Scale In: CPU < 30%
 
 📸 Screenshot:
-![CloudWatch Alarm](./screenshots/cloudwatch-metrics.png)
+![CloudWatch Alarm](./screenshots/cloud-watch-metrics.png)
 
 ---
 
