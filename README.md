@@ -49,9 +49,6 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 
 ## 🧩 Step 1: Create VPC
 
-- Created custom VPC
-- Enabled DNS support
-
 📸 Screenshot:
 ![VPC](./screenshots/vpc.png)
 
@@ -59,17 +56,12 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 
 ## 🌐 Step 2: Create Subnets
 
-- 2 Public Subnets
-- Different Availability Zones
-
 📸 Screenshot:
-![Subnets](./screenshots/subnets.png)
+![Subnets](./screenshots/subnet.png)
 
 ---
 
 ## 🌍 Step 3: Attach Internet Gateway
-
-- Enables internet access
 
 📸 Screenshot:
 ![Internet Gateway](./screenshots/internet-gateway.png)
@@ -78,18 +70,12 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 
 ## 🛣️ Step 4: Configure Route Table
 
-- Added route:
-  - `0.0.0.0/0 → IGW`
-
 📸 Screenshot:
 ![Route Table](./screenshots/route-table.png)
 
 ---
 
-## 💻 Step 5: Launch EC2 Instances (via ASG later)
-
-- Instances will be created using Launch Template
-- Distributed across multiple AZs
+## 💻 Step 5: EC2 Instances Running
 
 📸 Screenshot:
 ![EC2 Instances](./screenshots/ec2-instances.png)
@@ -98,20 +84,12 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 
 ## ⚙️ Step 6: Create Launch Template
 
-- AMI: Amazon Linux
-- Instance Type: t2.micro
-- Added User Data Script (Nginx + dynamic HTML)
-
 📸 Screenshot:
 ![Launch Template](./screenshots/launch-template.png)
 
 ---
 
 ## 🎯 Step 7: Create Target Group
-
-- Protocol: HTTP
-- Port: 80
-- Health checks enabled
 
 📸 Screenshot:
 ![Target Group](./screenshots/target-group.png)
@@ -120,10 +98,6 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 
 ## 🌍 Step 8: Create Application Load Balancer
 
-- Internet-facing
-- Listener: HTTP (80)
-- Attached Target Group
-
 📸 Screenshot:
 ![Load Balancer](./screenshots/load-balancer.png)
 
@@ -131,29 +105,19 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 
 ## 🔁 Step 9: Create Auto Scaling Group
 
-- Min: 2
-- Desired: 2
-- Max: 5
-- Multi-AZ deployment
-
 📸 Screenshot:
-![Auto Scaling Group](./screenshots/auto-scaling-group.png)
+![Auto Scaling Group](./screenshots/auto-scaling-group.jpeg)
 
 ---
 
 ## 📊 Step 10: Configure CloudWatch Alarm
 
-- Scale Out: CPU > 70%
-- Scale In: CPU < 30%
-
 📸 Screenshot:
-![CloudWatch Alarm](./screenshots/cloud-watch-metrics.png)
+![CloudWatch Alarm](./screenshots/cloud-watch-metrics.jpeg)
 
 ---
 
 ## 🌐 Step 11: Verify Load Balancing Output
-
-Access ALB DNS and refresh multiple times:
 
 ### 🔹 Instance (AZ-1)
 ![Output AZ1](./screenshots/output-az1.png)
@@ -173,12 +137,6 @@ This project uses a **user-data script** to automate instance setup.
 - Fetches metadata using IMDSv2
 - Generates dynamic HTML page
 
-### 📌 Output displays:
-- Instance ID
-- Availability Zone
-- Region
-- Private IP
-
 ---
 
 # 🎯 Key Features
@@ -193,10 +151,9 @@ This project uses a **user-data script** to automate instance setup.
 
 # 📈 Real-World Use Case
 
-This architecture is similar to:
-- Production web applications
-- SaaS platforms
-- Scalable backend systems
+- Production web applications  
+- SaaS platforms  
+- Scalable backend systems  
 
 ---
 
