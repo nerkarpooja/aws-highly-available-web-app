@@ -53,7 +53,7 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 - Enabled DNS support
 
 📸 Screenshot:
-![VPC](./screenshots/01-vpc.png)
+![VPC](./screenshots/vpc.png)
 
 ---
 
@@ -63,7 +63,7 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 - Different Availability Zones
 
 📸 Screenshot:
-![Subnets](./screenshots/02-subnets.png)
+![Subnets](./screenshots/subnets.png)
 
 ---
 
@@ -72,7 +72,7 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 - Enables internet access
 
 📸 Screenshot:
-![Internet Gateway](./screenshots/03-internet-gateway.png)
+![Internet Gateway](./screenshots/internet-gateway.png)
 
 ---
 
@@ -82,7 +82,7 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
   - `0.0.0.0/0 → IGW`
 
 📸 Screenshot:
-![Route Table](./screenshots/04-route-table.png)
+![Route Table](./screenshots/route-table.png)
 
 ---
 
@@ -92,7 +92,7 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 - Distributed across multiple AZs
 
 📸 Screenshot:
-![EC2 Instances](./screenshots/05-ec2-instances.png)
+![EC2 Instances](./screenshots/ec2-instances.png)
 
 ---
 
@@ -103,7 +103,7 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 - Added User Data Script (Nginx + dynamic HTML)
 
 📸 Screenshot:
-![Launch Template](./screenshots/06-launch-template.png)
+![Launch Template](./screenshots/launch-template.png)
 
 ---
 
@@ -114,7 +114,7 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 - Health checks enabled
 
 📸 Screenshot:
-![Target Group](./screenshots/07-target-group.png)
+![Target Group](./screenshots/target-group.png)
 
 ---
 
@@ -125,7 +125,7 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 - Attached Target Group
 
 📸 Screenshot:
-![Load Balancer](./screenshots/08-load-balancer.png)
+![Load Balancer](./screenshots/load-balancer.png)
 
 ---
 
@@ -137,7 +137,7 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 - Multi-AZ deployment
 
 📸 Screenshot:
-![Auto Scaling Group](./screenshots/09-auto-scaling-group.png)
+![Auto Scaling Group](./screenshots/auto-scaling-group.png)
 
 ---
 
@@ -147,7 +147,7 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 - Scale In: CPU < 30%
 
 📸 Screenshot:
-![CloudWatch Alarm](./screenshots/10-cloudwatch-alarm.png)
+![CloudWatch Alarm](./screenshots/cloudwatch-alarm.png)
 
 ---
 
@@ -156,10 +156,10 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 Access ALB DNS and refresh multiple times:
 
 ### 🔹 Instance (AZ-1)
-![Output AZ1](./screenshots/11-output-az1.png)
+![Output AZ1](./screenshots/output-az1.png)
 
 ### 🔹 Instance (AZ-2)
-![Output AZ2](./screenshots/12-output-az2.png)
+![Output AZ2](./screenshots/output-az2.png)
 
 ---
 
