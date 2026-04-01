@@ -53,7 +53,7 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 - Enabled DNS support
 
 📸 Screenshot:
-![VPC](./screenshots/vpc.png)
+![VPC](./screenshots/01-vpc.png)
 
 ---
 
@@ -63,7 +63,7 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 - Different Availability Zones
 
 📸 Screenshot:
-![Subnets](./screenshots/subnets.png)
+![Subnets](./screenshots/02-subnets.png)
 
 ---
 
@@ -72,7 +72,7 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 - Enables internet access
 
 📸 Screenshot:
-![IGW](./screenshots/igw.png)
+![Internet Gateway](./screenshots/03-internet-gateway.png)
 
 ---
 
@@ -82,44 +82,54 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
   - `0.0.0.0/0 → IGW`
 
 📸 Screenshot:
-![Route Table](./screenshots/route-table.png)
+![Route Table](./screenshots/04-route-table.png)
 
 ---
 
-## 💻 Step 5: Create Launch Template
+## 💻 Step 5: Launch EC2 Instances (via ASG later)
+
+- Instances will be created using Launch Template
+- Distributed across multiple AZs
+
+📸 Screenshot:
+![EC2 Instances](./screenshots/05-ec2-instances.png)
+
+---
+
+## ⚙️ Step 6: Create Launch Template
 
 - AMI: Amazon Linux
 - Instance Type: t2.micro
-- Added **User Data Script**
+- Added User Data Script (Nginx + dynamic HTML)
 
 📸 Screenshot:
-![Launch Template](./screenshots/launch-template.png)
+![Launch Template](./screenshots/06-launch-template.png)
 
 ---
 
-## 🎯 Step 6: Create Target Group
+## 🎯 Step 7: Create Target Group
 
 - Protocol: HTTP
 - Port: 80
 - Health checks enabled
 
 📸 Screenshot:
-![Target Group](./screenshots/target-group.png)
+![Target Group](./screenshots/07-target-group.png)
 
 ---
 
-## 🌍 Step 7: Create Application Load Balancer
+## 🌍 Step 8: Create Application Load Balancer
 
 - Internet-facing
 - Listener: HTTP (80)
 - Attached Target Group
 
 📸 Screenshot:
-![Load Balancer](./screenshots/alb.png)
+![Load Balancer](./screenshots/08-load-balancer.png)
 
 ---
 
-## 🔁 Step 8: Create Auto Scaling Group
+## 🔁 Step 9: Create Auto Scaling Group
 
 - Min: 2
 - Desired: 2
@@ -127,37 +137,35 @@ It uses **Auto Scaling + Load Balancer + Multi-AZ deployment** to ensure:
 - Multi-AZ deployment
 
 📸 Screenshot:
-![ASG](./screenshots/asg.png)
+![Auto Scaling Group](./screenshots/09-auto-scaling-group.png)
 
 ---
 
-## 📊 Step 9: Configure CloudWatch Alarm
+## 📊 Step 10: Configure CloudWatch Alarm
 
 - Scale Out: CPU > 70%
 - Scale In: CPU < 30%
 
 📸 Screenshot:
-![CloudWatch](./screenshots/cloudwatch.png)
+![CloudWatch Alarm](./screenshots/10-cloudwatch-alarm.png)
 
 ---
 
-## 🌐 Step 10: Verify Output
+## 🌐 Step 11: Verify Load Balancing Output
 
-- Access ALB DNS
-- Refresh multiple times
-- Observe different instances (Load Balancing)
+Access ALB DNS and refresh multiple times:
 
-### 🔹 Instance 1
-![Output 1](./screenshots/output-1.png)
+### 🔹 Instance (AZ-1)
+![Output AZ1](./screenshots/11-output-az1.png)
 
-### 🔹 Instance 2
-![Output 2](./screenshots/output-2.png)
+### 🔹 Instance (AZ-2)
+![Output AZ2](./screenshots/12-output-az2.png)
 
 ---
 
 # 💻 User Data Script
 
-This project uses a **user-data script** to automate instance setup:
+This project uses a **user-data script** to automate instance setup.
 
 ### 🔧 Features:
 - Installs Nginx
@@ -165,7 +173,7 @@ This project uses a **user-data script** to automate instance setup:
 - Fetches metadata using IMDSv2
 - Generates dynamic HTML page
 
-### 📌 Output shows:
+### 📌 Output displays:
 - Instance ID
 - Availability Zone
 - Region
@@ -176,36 +184,36 @@ This project uses a **user-data script** to automate instance setup:
 # 🎯 Key Features
 
 - ✅ High Availability (Multi-AZ)
-- ✅ Auto Scaling based on CPU
-- ✅ Load Balanced traffic
+- ✅ Auto Scaling based on CPU utilization
+- ✅ Load Balanced traffic distribution
 - ✅ Self-healing infrastructure
-- ✅ Dynamic instance visualization
+- ✅ Dynamic instance-level visualization
 
 ---
 
 # 📈 Real-World Use Case
 
 This architecture is similar to:
-- Production web apps
+- Production web applications
 - SaaS platforms
-- Scalable backend services
+- Scalable backend systems
 
 ---
 
 # 📌 Conclusion
 
-This project demonstrates a **production-ready AWS architecture** with:
+This project demonstrates a **production-grade AWS architecture** with:
 
-- Scalability
-- Reliability
-- Automation
-- Fault tolerance
+- Scalability  
+- Fault tolerance  
+- High availability  
+- Automation  
 
 ---
 
 # 👨‍💻 Author
 
-**Your Name**
+**Pooja Nerkar**
 
 ---
 
